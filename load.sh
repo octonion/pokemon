@@ -12,7 +12,11 @@ fi
 psql pokemon -f schema/pokemon.sql
 
 cp data/GAME_MASTER_POKEMON_v0_2.tsv /tmp/pokemon.tsv
-psql pokemon -f loaders/load_pokemon.sql
+psql pokemon -f loaders/load_pokemon_go.sql
 rm /tmp/pokemon.tsv
+
+cp data/pokemon_vi.csv /tmp/pokemon.csv
+psql pokemon -f loaders/load_pokemon_vi.sql
+rm /tmp/pokemon.csv
 
 exit

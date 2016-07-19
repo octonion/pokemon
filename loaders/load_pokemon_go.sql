@@ -1,8 +1,8 @@
 begin;
 
-drop table if exists pokemon.pokemon;
+drop table if exists pokemon.pokemon_go;
 
-create table pokemon.pokemon (
+create table pokemon.pokemon_go (
 	pkmn				integer,
 	base_stamina	      		integer,
 	base_attack	      		integer,
@@ -33,6 +33,6 @@ create table pokemon.pokemon (
 	primary key (pkmn)
 );
 
-copy pokemon.pokemon from '/tmp/pokemon.tsv' with delimiter as E'\t' csv header;
+copy pokemon.pokemon_go from '/tmp/pokemon.tsv' with delimiter as E'\t' csv header;
 
 commit;
